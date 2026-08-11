@@ -41,7 +41,6 @@ jobs:
       - name: build and push
       - uses: docker/build-push-action@v5
         with:
-          context: ./frontend
           file: ./frontend/Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/deboard-fe:latest
