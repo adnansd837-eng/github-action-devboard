@@ -1,5 +1,5 @@
 #Goal :- lint , build, test, push 
-# frontend folder and backend folder
+# frontend folder and backend folder ,,,,
 
 name: ci
 on: 
