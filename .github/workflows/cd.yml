@@ -1,4 +1,4 @@
-# Goal: Deploy Docker images after CI succeeds
+# Goal: Deploy Docker images after CI succeeds....
 
 name: CD
 
