@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - name: Copy example env to main env
-        run: cp .env.example .env
+      - name: Copy environment file with absolute sudo
+        run: /usr/bin/sudo cp .env.example .env
 
       - name: Docker login
         uses: docker/login-action@v4
