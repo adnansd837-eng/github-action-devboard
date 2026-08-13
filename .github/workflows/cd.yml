@@ -3,15 +3,15 @@
 name: CD
 
 on:
-  workflow_call: ["ci"]
-    
+  workflow_call:
+    workflows: ["ci"]
     types: ["completed"]
     branches:
       - 'advanced'
 
 jobs:
   deploy:
-    needs: .github/workflows/ci.yml
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: self-hosted
     steps:
     - name: checkout code
