@@ -11,6 +11,7 @@ on:
 
 jobs:
   deploy:
+    needs: .github/workflows/ci.yml
     runs-on: self-hosted
     steps:
     - name: checkout code
@@ -30,4 +31,4 @@ jobs:
         docker compose pull
         docker compose up -d
 
-      needs: .github/workflows/ci.yml
+      
