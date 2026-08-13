@@ -3,8 +3,8 @@
 name: CD
 
 on:
-  workflow_call:
-    workflows: ["ci"]
+  workflow_call: ["ci"]
+    
     types: ["completed"]
     branches:
       - 'advanced'
