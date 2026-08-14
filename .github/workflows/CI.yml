@@ -4,6 +4,9 @@
 name: ci
 on: 
   push:
+    paths:
+      - '**'                 # Monitor all files in the repository
+      - '!.github/workflows/**'
     branches: [main]
 
 jobs:
