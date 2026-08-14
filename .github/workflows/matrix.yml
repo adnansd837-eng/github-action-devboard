@@ -5,7 +5,38 @@ on:
   workflow_dispatch:
 
 jobs:
-  code-formate:
+  frontend:
+      runs-on: ubuntu-latest
+      strategy:
+      fail-fast: false                        #if any version fail it will run #false
+      matrix:
+        node-version: [22, 24, 26] 
+
+      steps:
+        - name: checkout code
+          uses: actions/checkout@v7
+
+        - name: setup Node.job
+          uses: actions/setup-node@v6
+          with:
+            node-version: ${{matrix.node-version}}         #call the matrix
+            cache: npm
+            cache-dependency-path: 'frontend/package-lock.json'
+
+        - name: install npm package
+          run: npm install --force
+          working-directory: frontend
+
+        - name: run linter
+          run: npm run lint
+          working-directory: frontend
+        
+        - name: run test
+          run: npm run test
+          working-directory: frontend
+
+
+  code-formate backend:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false                        #if any version fail it will run #false
@@ -13,7 +44,6 @@ jobs:
         go-version: [1.22, 1.23, 1.24]         #this part will run as a for loop
     
     steps:
-  
       - name: checkout code
         uses: actions/checkout@v7
 
