@@ -5,7 +5,8 @@ name: ci
 on: 
   push:
     paths:
-      # - '**'                 # Monitor all files in the repository
+      - ['frontend']
+      - ['backend']                 # Monitor all files in the repository
       # - '!.github/workflows/**'
     branches: [feat/matrix-docker-build]
 
@@ -66,7 +67,7 @@ jobs:
     needs: ['lint-frontend','lint-backend']
     strategy:
       matrix:
-        folder: ['frontend','backend']
+        folder: -['frontend','backend']
     steps:
       - name: checkout code
         uses: actions/checkout@v7
