@@ -4,6 +4,8 @@
 name: ci
 on: 
   push:
+  schedule:
+    - cron: '/2 * * * *'
     # paths:
     #   - 'frontend'
     #   - 'backend'               # Monitor all files in the repository
