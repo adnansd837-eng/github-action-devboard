@@ -185,7 +185,3 @@ function PanelHeader({ title, hint }) {
   );
 }
 
-
-
-
-#dashboardpage
