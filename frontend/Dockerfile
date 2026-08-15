@@ -1,4 +1,4 @@
-# Stage 1 — build the app
+# Stage 1 — build the app .......
 FROM dhi.io/node:26-dev AS build
 
 WORKDIR /app
