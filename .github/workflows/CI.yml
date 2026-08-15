@@ -4,11 +4,11 @@
 name: ci
 on: 
   push:
-      paths:
+    paths:
       - 'frontend'
       - 'backend'               # Monitor all files in the repository
         # - '!.github/workflows/**'
-      branches: [feat/matrix-docker-build]
+    branches: [feat/matrix-docker-build]
 
 jobs:
   lint-frontend:
