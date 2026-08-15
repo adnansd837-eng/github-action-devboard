@@ -2,7 +2,7 @@
 
 name: Go linter
 on:
-  # schedule:
+  workflow-dispatch:
   #   - cron: '*/2 * * * *'
       branches: [feat/matrix-docker-build]
 jobs:
