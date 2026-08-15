@@ -4,12 +4,10 @@
 name: ci
 on: 
   push:
-  schedule:
-    - cron: '/2 * * * *'
-    # paths:
+    paths:
     #   - 'frontend'
     #   - 'backend'               # Monitor all files in the repository
-        # - '!.github/workflows/**'
+      - '!.github/workflows/**'
     branches: [feat/matrix-docker-build]
 
 jobs:
