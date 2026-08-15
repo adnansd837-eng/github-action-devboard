@@ -4,9 +4,9 @@
 name: ci
 on: 
   push:
-    paths:
-      - 'frontend'
-      - 'backend'               # Monitor all files in the repository
+    # paths:
+    #   - 'frontend'
+    #   - 'backend'               # Monitor all files in the repository
         # - '!.github/workflows/**'
     branches: [feat/matrix-docker-build]
 
